@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'terraform-waf/**'
+      - 'backend-setup/**'
   workflow_dispatch:
 
 env:
