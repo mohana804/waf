@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "waf12345-unique-terraform-state-bucket"  # change this to a unique name
+  bucket = "waf209"  # change this to a unique name
 
   versioning {
     enabled = true
