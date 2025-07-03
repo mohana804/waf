@@ -1,4 +1,4 @@
-region         = "us-east-1"
+region         = "ap-southeast-1"
 web_acl_name   = "example-waf"
 scope          = "REGIONAL"
 
