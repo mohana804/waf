@@ -13,5 +13,5 @@ ip_set_block = [
 ]
 
 resource_arns = [
-  "arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/my-app-alb/50dc6c495c0c9188"
+  "arn:aws:elasticloadbalancing:ap-southeast-1:277707132353:loadbalancer/app/cognos-app/3b5c4827a9174d0c"
 ]
