@@ -1,5 +1,5 @@
 region         = "ap-southeast-1"
-web_acl_name   = "example-waf"
+web_acl_name   = "testing-waf"
 scope          = "REGIONAL"
 
 ip_set_allow = [
