@@ -40,6 +40,22 @@ jobs:
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform init
 
+      - name: Install Infracost
+        run: |
+          curl -sL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
+          echo "$HOME/.infracost/bin" >> $GITHUB_PATH
+
+      - name: Infracost Breakdown
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+          infracost breakdown --path=. \
+            --terraform-var-file=environments/${{ github.event.inputs.env }}.tfvars \
+            --usage-file=./infracost-usage.yml \
+            --format table \
+            --out-file infracost-report.json
+        env:
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+
       - name: Terraform Plan
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform plan -var-file="environments/${{ github.event.inputs.env }}.tfvars" -out=tfplan
